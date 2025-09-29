@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: my-deployment
   labels:
-    app: my-deployment-app
-  namespace: myspace
+    app: my-app
 spec:
   replicas: 4
   selector:
