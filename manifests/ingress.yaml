@@ -4,13 +4,16 @@ metadata:
   name: myingress
   labels:
     app: my-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /achinta-hello
 spec:
+  ingressClassName: nginx
   rules:
   - host: achinta.site
     http:
       paths:
       - pathType: Prefix
-        path: "/achinta-hello"
+        path: "/"
         backend:
           service:
             name: myapp-service
